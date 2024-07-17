@@ -12,21 +12,28 @@
             <!-- Billing Section -->
             <div class="billing-section">
                 <h2>Billing</h2>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" required>
+                <div class="coolinput">
+                    <label class="text" for="name">Name</label>
+                    <input type="text" id="name" name="name" class="input">
+                    <div id="name-error" class="error-message"></div>
+                </div>
+                <div class="coolinput">
+                    <label class="text" for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="input">
+                    <div id="email-error" class="error-message"></div>
+                </div>
+                <div class="coolinput">
+                    <label class="text" for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" class="input">
+                    <div id="phone-error" class="error-message"></div>
+                </div>
             </div>
 
             <!-- Payment Method Section -->
             <div class="payment-section">
                 <h2>Payment Method</h2>
                 <div class="payment-option">
-                    <input type="radio" id="paypal" name="payment-method" value="paypal" required>
+                    <input type="radio" id="paypal" name="payment-method" value="paypal">
                     <label for="paypal">
                         <span>PayPal</span>
                         <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal">
@@ -34,7 +41,7 @@
                     <p>You will be redirected to the PayPal website after submitting your order</p>
                 </div>
                 <div class="payment-option">
-                    <input type="radio" id="credit-card" name="payment-method" value="credit-card" required>
+                    <input type="radio" id="credit-card" name="payment-method" value="credit-card">
                     <label for="credit-card">
                         <span>Pay with Credit Card</span>
                         <div class="credit-card-logos">
@@ -42,9 +49,21 @@
                         </div>
                     </label>
                     <div id="credit-card-info">
-                        <input type="text" id="card-number" name="card-number" placeholder="Card number" required>
-                        <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY" required>
-                        <input type="text" id="card-cvc" name="card-cvc" placeholder="Card Security Code" required>
+                        <div class="coolinput">
+                            <label class="text" for="card-number">Card number</label>
+                            <input type="text" id="card-number" name="card-number" class="input">
+                            <div id="card-number-error" class="error-message"></div>
+                        </div>
+                        <div class="coolinput">
+                            <label class="text" for="card-expiry">MM/YY</label>
+                            <input type="text" id="card-expiry" name="card-expiry" class="input">
+                            <div id="card-expiry-error" class="error-message"></div>
+                        </div>
+                        <div class="coolinput">
+                            <label class="text" for="card-cvc">Card Security Code</label>
+                            <input type="text" id="card-cvc" name="card-cvc" class="input">
+                            <div id="card-cvc-error" class="error-message"></div>
+                        </div>
                         <a href="#">What is this?</a>
                     </div>
                 </div>
@@ -57,7 +76,7 @@
             <div class="order-review-section">
                 <h2>Order Review</h2>
                 <div class="order-item">
-                    <img src="https://example.com/veg-loaded-pizza.jpg" alt="Veg-Loaded Pizza">
+                    <img src="pasta.jpg" alt="Veg-Loaded Pizza">
                     <div class="item-details">
                         <p>Veg-Loaded Pizza</p>
                         <div class="quantity-selector">
@@ -70,7 +89,7 @@
                     <button type="button" class="remove-item-btn" onclick="removeItem(this)">×</button>
                 </div>
                 <div class="order-item">
-                    <img src="https://example.com/chicken-biryani.jpg" alt="Chicken Biryani">
+                    <img src="briyani.jpg" alt="Chicken Biryani">
                     <div class="item-details">
                         <p>Chicken Biryani</p>
                         <div class="quantity-selector">
@@ -82,8 +101,10 @@
                     <p class="item-price">₹200.00</p>
                     <button type="button" class="remove-item-btn" onclick="removeItem(this)">×</button>
                 </div>
-                <label for="order-comment">Order Comment</label>
-                <textarea id="order-comment" name="order-comment" placeholder="Type here..."></textarea>
+                <div class="coolinput">
+                    <label class="text" for="order-comment">Order Comment</label>
+                    <textarea id="order-comment" name="order-comment" class="input" placeholder="Type here..."></textarea>
+                </div>
             </div>
 
             <!-- Billing Summary Section -->
@@ -111,8 +132,9 @@
                 </div>
                 <p class="inclusive-note">(Inclusive of all Tax)</p>
                 <div class="terms-policy">
-                    <input type="checkbox" id="terms-policy" required>
-                    <label for="terms-policy">Please check to acknowledge our <a href="#">Privacy & Terms Policy</a></label>
+                    <input type="checkbox" id="terms-policy">
+                    <label for="terms-policy">Please check to acknowledge our <a href="#">Privacy & Terms Policy</a></label><br><br><br>
+                    <div id="terms-policy-error" class="error-message"></div>
                 </div>
                 <button type="submit" class="pay-btn">Pay ₹420.00</button>
             </div>
