@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="checkout-container">
+        <form id="checkout-form">
+            <!-- Billing Section -->
+            <div class="billing-section">
+                <h2>Billing</h2>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <!-- Payment Method Section -->
+            <div class="payment-section">
+                <h2>Payment Method</h2>
+                <div class="payment-option">
+                    <input type="radio" id="paypal" name="payment-method" value="paypal" required>
+                    <label for="paypal">
+                        <span>PayPal</span>
+                        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal">
+                    </label>
+                    <p>You will be redirected to the PayPal website after submitting your order</p>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="credit-card" name="payment-method" value="credit-card" required>
+                    <label for="credit-card">
+                        <span>Pay with Credit Card</span>
+                        <div class="credit-card-logos">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+                        </div>
+                    </label>
+                    <div id="credit-card-info">
+                        <input type="text" id="card-number" name="card-number" placeholder="Card number" required>
+                        <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY" required>
+                        <input type="text" id="card-cvc" name="card-cvc" placeholder="Card Security Code" required>
+                        <a href="#">What is this?</a>
+                    </div>
+                </div>
+                <div class="payment-info">
+                    <p>We protect your payment information using encryption to provide bank-level security.</p>
+                </div>
+            </div>
+
+            <!-- Order Review Section -->
+            <div class="order-review-section">
+                <h2>Order Review</h2>
+                <div class="order-item">
+                    <img src="https://example.com/veg-loaded-pizza.jpg" alt="Veg-Loaded Pizza">
+                    <div class="item-details">
+                        <p>Veg-Loaded Pizza</p>
+                        <div class="quantity-selector">
+                            <button type="button" class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" class="quantity-input" value="1" readonly>
+                            <button type="button" class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </div>
+                    <p class="item-price">₹150.00</p>
+                    <button type="button" class="remove-item-btn" onclick="removeItem(this)">×</button>
+                </div>
+                <div class="order-item">
+                    <img src="https://example.com/chicken-biryani.jpg" alt="Chicken Biryani">
+                    <div class="item-details">
+                        <p>Chicken Biryani</p>
+                        <div class="quantity-selector">
+                            <button type="button" class="quantity-btn" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" class="quantity-input" value="1" readonly>
+                            <button type="button" class="quantity-btn" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </div>
+                    <p class="item-price">₹200.00</p>
+                    <button type="button" class="remove-item-btn" onclick="removeItem(this)">×</button>
+                </div>
+                <label for="order-comment">Order Comment</label>
+                <textarea id="order-comment" name="order-comment" placeholder="Type here..."></textarea>
+            </div>
+
+            <!-- Billing Summary Section -->
+            <div class="billing-summary-section">
+                <h2>Billing Summary</h2>
+                <div class="summary-item">
+                    <p>Subtotal</p>
+                    <p>₹350.00</p>
+                </div>
+                <div class="summary-item">
+                    <p>Discount</p>
+                    <p>-₹0.00</p>
+                </div>
+                <div class="summary-item">
+                    <p>Tax</p>
+                    <p>₹50.00</p>
+                </div>
+                <div class="summary-item">
+                    <p>Service Charge</p>
+                    <p>₹20.00</p>
+                </div>
+                <div class="summary-item grand-total">
+                    <p>Grand Total</p>
+                    <p>₹420.00</p>
+                </div>
+                <p class="inclusive-note">(Inclusive of all Tax)</p>
+                <div class="terms-policy">
+                    <input type="checkbox" id="terms-policy" required>
+                    <label for="terms-policy">Please check to acknowledge our <a href="#">Privacy & Terms Policy</a></label>
+                </div>
+                <button type="submit" class="pay-btn">Pay ₹420.00</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
